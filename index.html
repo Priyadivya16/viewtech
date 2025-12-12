@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viewtech Security - CCTV Surveillance</title>
+
+<style>
+
+/* GLOBAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #0a0f33;     /* Full website dark background */
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: #0a0f33;
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+header nav a:hover {
+    color: #00ffff;
+}
+
+/* HOME SECTION */
+.home-section {
+    width: 100%;
+    padding: 70px 10%;
+    background: 
+        linear-gradient(to right, rgba(0,20,80,0.9), rgba(0,0,0,0.7)),
+        url("camera.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-title {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.main-title span {
+    color: #00bfff;
+}
+
+.home-desc {
+    margin: 20px 0;
+    width: 450px;
+    font-size: 17px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background: #00bfff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.cctv-img {
+    width: 380px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* SERVICE CARDS */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.service-card {
+    width: 230px;
+    background: white;
+    color: #000;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.service-card img {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* GALLERY */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 10px 20px 30px 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,191,255,0.7);
+}
+
+/* Gallery Headings */
+.gallery-heading {
+    color: #00ffff;
+    font-size: 22px;
+    text-align: center;
+    margin: 25px 0 15px 0;
+    position: relative;
+}
+
+.gallery-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #00ffff;
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ABOUT SECTION */
+.about-container {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 25px 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    line-height: 1.8;
+    font-size: 17px;
+    color: #ddd;
+}
+
+.about-container p {
+    margin-bottom: 15px;
+}
+
+.about-heading {
+    color: #00ffff;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.about-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #00ffff;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.about-container ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.about-container ul li {
+    margin-bottom: 10px;
+}
+
+/* CONTACT */
+#contact a {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* VISITING CARD */
+.visiting-card img {
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 12px white;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-desc {
+        width: 100%;
+    }
+
+    .cctv-img {
+        width: 80%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>VIEWTECH SECURITY</h1>
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#product">Products</a> |
+        <a href="#gallery">Gallery</a> |
+        <a href="#about">About</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="home-section">
+    <div class="home-content">
+        <div>
+            <h1 class="main-title">
+                CCTV <span>Surveillance</span> <br>
+                & Access Control
+            </h1>
+
+            <p class="home-desc">
+                We provide HD/IP CCTV Cameras, Access Control, Intercom,
+                Biometric, and Security Alarm solutions for homes, shops & industries.
+            </p>
+
+            <a href="#contact" class="btn-primary">Order Now</a>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="product">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">Our Services</h2>
+
+    <div class="service-container">
+        <div class="service-card">
+            <img src="image.jpg" alt="CCTV Camera">
+            <h3>CCTV Camera</h3>
+            <p>HD/IP security camera installation.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="intercom.jpg" alt="Intercom">
+            <h3>Intercom</h3>
+            <p>Office & apartment intercom setup.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="image wifi.jpg" alt="Networking">
+            <h3>Networking</h3>
+            <p>LAN & WiFi configuration.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="biometric.jpg" alt="Biometric">
+            <h3>Biometric</h3>
+            <p>Attendance & access control.</p>
+        </div>
+
+        <div class="service-card">
+            <img src="alarm.jpg" alt="Alarms">
+            <h3>Alarms</h3>
+            <p>Fire, smoke & sensor alarms.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">Gallery</h2>
+
+    <!-- General Installations -->
+    <h3 class="gallery-heading">General Installations</h3>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="cm.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="im4.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="robot.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="image.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="zeronics.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="aravind.jpg" alt="Gallery Image"></div>
+    </div>
+
+    <!-- Police Projects -->
+    <h3 class="gallery-heading">Police Projects</h3>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="polce.jpg" alt="Police Project"></div>
+    </div>
+
+    <!-- Apartment Installations -->
+    <h3 class="gallery-heading">Apartment Installations</h3>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="im5.jpg" alt="Apartment Installations"></div>
+        <div class="gallery-item"><img src="apperment.jpg" alt="Apartment Installations"></div>
+        <div class="gallery-item"><img src="johnson.jpg" alt="Johnson Lifts"></div>
+        <div class="gallery-item"><img src="cctv.jpg" alt="CCTV"></div>
+        <div class="gallery-item"><img src="j2.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="ap.jpg" alt="Gallery Image"></div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">About Us</h2>
+
+    <div class="about-container">
+        <p>
+            Welcome to <b>VIEWTECH SECURITY</b>, your trusted partner for comprehensive CCTV and security surveillance solutions. We provide peace of mind and robust protection for homes, businesses, and public spaces through cutting-edge technology and professional service.
+        </p>
+        <p>
+            Our mission is simple: to make your world safer. We specialize in proactive security measures that deter threats and provide reliable, high-definition evidence when needed. From basic home setups to complex integrated systems, our team of experienced technicians delivers tailored solutions.
+        </p>
+
+        <h3 class="about-heading">Why Choose Us?</h3>
+        <ul>
+            <li><b>Local Expertise:</b> Serving Chennai and surrounding areas with a deep understanding of local security needs.</li>
+            <li><b>Tailored Solutions:</b> Custom CCTV systems, including dome, bullet, and AI-powered IP cameras.</li>
+            <li><b>Trusted by the Community:</b> Our clients include prominent institutions and associations.</li>
+        </ul>
+
+        <h3 class="about-heading">Our Notable Clients</h3>
+        <ul>
+            <li>AV High Field Apartment</li>
+            <li>Johnson Lifts Pvt Ltd</li>
+            <li>Nehru Nagar Association</li>
+            <li>Kovilpalayam Police Station</li>
+        </ul>
+    </div>
+</section>
+
+<!-- FEEDBACK FORM -->
+<section id="feedback" style="padding:30px 20px; text-align:center; background:rgba(255,255,255,0.05); margin-top:30px; border-radius:12px;">
+    <h2 style="color:#00ffff; margin-bottom:20px;">Feedback</h2>
+
+    <form id="feedbackForm" style="max-width:500px; margin:auto;">
+        <input type="text" name="name" placeholder="Your Name" required
+            style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:none;">
+        <input type="email" name="email" placeholder="Your Email" required
+            style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:none;">
+        <textarea name="message" placeholder="Your Message" required
+            style="width:100%; padding:10px; margin-bottom:15px; border-radius:8px; border:none; height:120px;"></textarea>
+        <button type="submit" style="background:#00bfff; color:white; padding:12px 25px; border:none; border-radius:8px; cursor:pointer; font-size:16px;">
+            Submit
+        </button>
+    </form>
+
+    <p id="thankMessage" style="color:#00ffff; margin-top:20px; display:none; font-weight:bold;">
+        Thank you for your feedback! We appreciate your message.
+    </p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">Contact</h2>
+
+    <p><span class="icon">📞</span><b>Phone:</b> +91 96882 56021</p>
+    <p><span class="icon">📍</span><b>Location:</b> HA8, Ganapathy Ma Nagar, Vilankuruchi Main Road, Coimbatore - 641006</p>
+    <p><span class="icon">💬</span><b>WhatsApp:</b> 
+        <a href="https://wa.me/919688256021" target="_blank">Chat on WhatsApp</a>
+    </p>
+</section>
+<!-- VISITING CARD -->
+<section class="visiting-card" style="padding:40px 20px; text-align:center; background:rgba(255,255,255,0.05);">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:30px;">Visiting Card</h2>
+
+    <div style="
+        background: rgba(0,15,50,0.9);
+        width: 320px;
+        margin: auto;
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px #00ffff;
+        color: #fff;
+        font-family: Arial, sans-serif;
+        text-align: left;
+    ">
+        <h3 style="color:#00bfff; margin-bottom:10px;">VIEWTECH SECURITY</h3>
+        <p style="margin:5px 0;"><b>Contact Person:</b> John Doe</p>
+        <p style="margin:5px 0;"><b>Phone:</b> <a href="tel:+919688256021" style="color:#00ffff;">+91 96882 56021</a></p>
+        <p style="margin:5px 0;"><b>Email:</b> <a href="mailto:info@viewtechsecurity.com" style="color:#00ffff;">info@viewtechsecurity.com</a></p>
+        <p style="margin:5px 0;"><b>Address:</b> HA8, Ganapathy Ma Nagar, Vilankuruchi Main Road, Coimbatore - 641006</p>
+        <img src="view tech.jpg" alt="Logo" style="width:100%; margin-top:15px; border-radius:12px; box-shadow:0 0 12px #00ffff;">
+    </div>
+</section>
+
+
+<!-- MODAL FOR FULL IMAGE VIEW -->
+<div id="imageModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+    <span id="modalClose" style="position:absolute; top:20px; right:35px; color:#00ffff; font-size:40px; cursor:pointer;">&times;</span>
+    <img id="modalImg" src="" style="max-width:90%; max-height:90%; border-radius:15px; box-shadow:0 0 15px #00ffff;">
+</div>
+
+<script>
+    // =========================
+    // Feedback Form
+    // =========================
+    const form = document.getElementById('feedbackForm');
+    const thankMessage = document.getElementById('thankMessage');
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault(); // prevent actual form submission
+        form.style.display = 'none'; // hide the form
+        thankMessage.style.display = 'block'; // show thank you message
+    });
+
+    // =========================
+    // Gallery Image Modal
+    // =========================
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImg');
+    const modalClose = document.getElementById('modalClose');
+
+    const galleryImages = document.querySelectorAll('.gallery-item img');
+    galleryImages.forEach(img => {
+        img.style.cursor = 'pointer';
+        img.addEventListener('click', () => {
+            modal.style.display = 'flex';
+            modalImg.src = img.src;
+        });
+    });
+
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    modal.addEventListener('click', (e) => {
+        if(e.target === modal) modal.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

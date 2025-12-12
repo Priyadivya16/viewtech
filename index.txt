@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Viewtech Security - CCTV Surveillance</title>
+
+<style>
+/* GLOBAL */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #0a0f33;
+    color: white;
+}
+
+/* HEADER */
+header {
+    background: #0a0f33;
+    padding: 20px;
+    text-align: center;
+    color: #FFFFFF;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+header nav a:hover {
+    color: #00ffff;
+}
+
+/* HOME SECTION */
+.home-section {
+    width: 100%;
+    padding: 70px 10%;
+    background: linear-gradient(to right, rgba(0,20,80,0.9), rgba(0,0,0,0.7)), url("camera.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.main-title {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.main-title span {
+    color: #00bfff;
+}
+
+.home-desc {
+    margin: 20px 0;
+    width: 450px;
+    font-size: 17px;
+    color: #ddd;
+    line-height: 1.6;
+}
+
+.btn-primary {
+    background: #00bfff;
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.cctv-img {
+    width: 380px;
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+/* SERVICE CARDS */
+.service-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.service-card {
+    width: 230px;
+    background: white;
+    color: #000;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+.service-card img {
+    width: 100%;
+    height: 140px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+/* GALLERY */
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 10px 20px 30px 20px;
+}
+
+.gallery-item {
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(0,191,255,0.7);
+}
+
+/* Gallery Headings */
+.gallery-heading {
+    color: #00ffff;
+    font-size: 22px;
+    text-align: center;
+    margin: 25px 0 15px 0;
+    position: relative;
+}
+
+.gallery-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #00ffff;
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* ABOUT SECTION */
+.about-container {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 25px 40px;
+    margin: 20px auto;
+    max-width: 900px;
+    line-height: 1.8;
+    font-size: 17px;
+    color: #ddd;
+}
+
+.about-container p {
+    margin-bottom: 15px;
+}
+
+.about-heading {
+    color: #00ffff;
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    text-align: left;
+    position: relative;
+}
+
+.about-heading::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #00ffff;
+    margin-top: 5px;
+    border-radius: 2px;
+}
+
+.about-container ul {
+    margin-left: 20px;
+    list-style-type: disc;
+}
+
+.about-container ul li {
+    margin-bottom: 10px;
+}
+
+/* FEEDBACK SECTION */
+.feedback-container {
+    background: rgba(255,255,255,0.05);
+    border-radius: 12px;
+    padding: 25px 40px;
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.feedback-heading {
+    text-align: center;
+    color: #00ffff;
+    font-size: 22px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.feedback-heading::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: #00ffff;
+    margin: 8px auto 0 auto;
+    border-radius: 2px;
+}
+
+.feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.feedback-form input, .feedback-form textarea {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+}
+
+.feedback-form button {
+    background: #00bfff;
+    color: #fff;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.feedback-form button:hover {
+    background: #00ffff;
+}
+
+/* CONTACT */
+#contact a {
+    color: #00ffff;
+    font-weight: bold;
+}
+
+.icon {
+    font-size: 22px;
+    margin-right: 10px;
+}
+
+/* VISITING CARD */
+.visiting-card img {
+    display: block;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 12px white;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: #00bfff;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    z-index: 100;
+    transition: background 0.3s;
+}
+
+#backToTop:hover {
+    background: #00ffff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .home-desc {
+        width: 100%;
+    }
+
+    .cctv-img {
+        width: 80%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>VIEWTECH SECURITY</h1>
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#product">Products</a> |
+        <a href="#gallery">Gallery</a> |
+        <a href="#about">About</a> |
+        <a href="#feedback">Feedback</a> |
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" class="home-section">
+    <div class="home-content">
+        <div>
+            <h1 class="main-title">
+                CCTV <span>Surveillance</span> <br>
+                & Access Control
+            </h1>
+            <p class="home-desc">
+                We provide HD/IP CCTV Cameras, Access Control, Intercom,
+                Biometric, and Security Alarm solutions for homes, shops & industries.
+            </p>
+            <a href="#contact" class="btn-primary">Order Now</a>
+        </div>
+        <img src="camera.png" class="cctv-img">
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section id="product">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">Our Services</h2>
+    <div class="service-container">
+        <div class="service-card">
+            <img src="image.jpg" alt="CCTV Camera">
+            <h3>CCTV Camera</h3>
+            <p>HD/IP security camera installation.</p>
+        </div>
+        <div class="service-card">
+            <img src="intercom.jpg" alt="Intercom">
+            <h3>Intercom</h3>
+            <p>Office & apartment intercom setup.</p>
+        </div>
+        <div class="service-card">
+            <img src="image wifi.jpg" alt="Networking">
+            <h3>Networking</h3>
+            <p>LAN & WiFi configuration.</p>
+        </div>
+        <div class="service-card">
+            <img src="biometric.jpg" alt="Biometric">
+            <h3>Biometric</h3>
+            <p>Attendance & access control.</p>
+        </div>
+        <div class="service-card">
+            <img src="alarm.jpg" alt="Alarms">
+            <h3>Alarms</h3>
+            <p>Fire, smoke & sensor alarms.</p>
+        </div>
+    </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">Gallery</h2>
+    <h3 class="gallery-heading">General Installations</h3>
+    <div class="gallery-container">
+        <div class="gallery-item"><img src="cm.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="im4.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="robot.jpg" alt="Gallery Image"></div>
+        <div class="gallery-item"><img src="image.jpg" alt="Gallery Image"></div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">About Us</h2>
+    <div class="about-container">
+        <p>Welcome to <b>VIEWTECH SECURITY</b>, your trusted partner for comprehensive CCTV and security surveillance solutions.</p>
+        <p>Our mission is simple: to make your world safer. We specialize in proactive security measures and tailored solutions.</p>
+    </div>
+</section>
+
+<!-- FEEDBACK / CUSTOMER QUERIES -->
+<section id="feedback">
+    <h2 class="feedback-heading">Customer Feedback & Queries</h2>
+    <div class="feedback-container">
+        <form class="feedback-form" id="feedbackForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" placeholder="Your Feedback or Query" rows="5" required></textarea>
+            <button type="submit">Submit Feedback</button>
+        </form>
+        <div id="feedbacklist" style="margin-top:30px; >
+<h3 style="color:#00ffff; text-align:center;">All Feedbacks</h3>
+</div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">Contact</h2>
+    <p><span class="icon">📞</span><b>Phone:</b> +91 96882 56021</p>
+    <p><span class="icon">📍</span><b>Location:</b> HA8, Ganapathy Ma Nagar, Vilankuruchi Main Road, Coimbatore - 641006</p>
+    <p><span class="icon">💬</span><b>WhatsApp:</b> 
+        <a href="https://wa.me/919688256021" target="_blank">Chat on WhatsApp</a>
+    </p>
+</section>
+
+<!-- VISITING CARD -->
+<section class="visiting-card">
+    <h2 style="text-align:center;color:#00ffff; margin-bottom:20px;">Visiting Card</h2>
+    <img src="view tech.jpg" width="300" alt="Visiting Card">
+</section>
+
+<!-- BACK TO TOP BUTTON -->
+<button id="backToTop" title="Back to top">↑</button>
+
+<script>
+// Smooth scroll
+document.querySelectorAll('header nav a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+    });
+});
+
+// Back to Top Button
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Feedback form submission
+document.getElementById('feedbackForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const messageBox = document.getElementById('Message');
+const now =new date();
+const timestamp=now.tolocalestring();
+
+const feedbackList=document.getElementById('feedbackList');
+const feedbackItem = document.createElement('div');
+fedbsckItem.style.background='rgba(0,191,255,0.1)';
+feedbackItem.style.color='#fff';
+feedbackItem.style.padding='10px';
+feedbackItem.style.marginbottom='10px';
+feedbackItem.style.bordreRadius='8px';
+feedbackItem.innerHTML=<b>${name}</b>($timestamp}):<br>${message};
+feedbackList.appendChild(feedbackItem);
+
+this.reset();
+});
+</script>
+
+    </body>
+</html>
